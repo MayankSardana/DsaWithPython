@@ -1,0 +1,49 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+
+
+from array import *;
+
+
+arr = array('i' , [2,3,2,5,6]);
+
+
+maximum = -1;
+
+for val in arr:
+    if(val>maximum):
+        maximum = val
+        
+print(maximum)
+
+
+maxArray = [0 for i in range(maximum + 1)]
+
+
+print(maxArray)
+
+for i in arr:
+    maxArray[i] = maxArray[i] + 1;
+    
+    
+print(maxArray)
+
+k = 0;
+
+for i in range(0 , len(maxArray)):
+    val = maxArray[i];
+    while(val>0):
+        arr[k] = i
+        k = k + 1
+        val = val - 1
+        
+        
+for i in arr:
+    print(i)
+    
+
