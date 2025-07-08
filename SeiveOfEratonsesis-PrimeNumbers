@@ -1,0 +1,32 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+
+
+
+n = 100
+primes = [True] * (n + 1);
+
+    
+primes[0] = False
+primes[1] = False
+
+index = 2
+
+while index*index<=n:
+    if primes[index]:
+        for j in range(index*index , n + 1 , index):
+            primes[j] = False
+    index = index + 1
+    
+    
+for i in range(0 , n + 1):
+    if primes[i]==True:
+        print(i)
+    
+    
+    
