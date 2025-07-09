@@ -3,3 +3,16 @@ Find GCD of 2 numbers
 Find LCM of 2 Numbers formulae = lcm*gcd= Product of 2 numbers
 
 Find Prime Factorization of a number 
+
+Compress String  medium
+
+example
+
+aaabr
+a3br
+
+aaasssffdd
+a3s3f2d2
+
+https://leetcode.com/problems/string-compression/description/
+
