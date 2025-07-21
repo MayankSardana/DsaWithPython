@@ -1,0 +1,93 @@
+class Solution {
+
+    public int[] sortArray(String[] words)
+    {
+        int max = 0;
+        for(String i:words){
+            max = Math.max(max , i.length());
+        }
+        int[] arr = new int[max + 1];
+        for(String w:words){
+            arr[w.length()] = arr[w.length()] + 1;
+        }
+
+        int[] sortedArray = new int[words.length];
+        int k = 0;
+        for(int i = 0;i<arr.length;i++)
+        {
+            if(arr[i]!=0){
+                int num = arr[i];
+                while(num>0){
+                    sortedArray[k] = i;
+                    num--;
+                    k++;
+                }
+            }
+        }
+        return sortedArray;
+    }
+    public int maxPalindromesAfterOperations(String[] words) {
+        int[] arr = sortArray(words);
+        int alpha[] = new int[26];
+        for(String word:words){
+            for(int i = 0;i<word.length();i++){
+                char ch = word.charAt(i);
+                alpha[ch - 'a']++;
+            }
+        }
+
+        for(int i = 0;i<alpha.length;i++){
+            char ch2 = (char)((int)'a' + i);
+            System.out.println(ch2 + "  " + alpha[i]);
+        }
+
+
+        int evenpairs = 0;
+        int odd = 0;
+
+        for(int i = 0;i<26;i++)
+        {
+            int val = alpha[i];
+            if(val!=0){
+                evenpairs = evenpairs + val/2;
+                odd = odd + val%2;
+            }
+        }
+
+        int result = 0;
+        for(int i = 0;i<arr.length;i++)
+        {
+            int val = arr[i];
+            if(val%2==0){
+                int epwn = val/2;
+                if(epwn<=evenpairs){
+                    evenpairs = evenpairs - epwn;
+                    result++;
+                }else{
+                    break;
+                }
+            }else{
+                int epwn2 = val/2;
+                if(epwn2<=evenpairs){
+                    if(odd>0){
+                        result++;
+                        odd--;
+                        evenpairs = evenpairs - epwn2;
+                    }else{
+                        int check = evenpairs - epwn2;
+                        if(check==0){
+                            break;
+                        }else{
+                            odd = odd + 1;
+                            evenpairs = evenpairs - epwn2 - 1;
+                            result++;
+                        }
+                    }
+                }else{
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+}
