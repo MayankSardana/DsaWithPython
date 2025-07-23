@@ -1,0 +1,60 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java . util . Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+		 System.out.println("enter n:- 1 to add element");
+		 int n = sc.nextInt();  // input
+		 
+// 		 head and tail. head starting pointer and tail end of ll
+         Node head = null;
+         Node tail = null;
+         
+         while(n==1)
+         {
+             System.out.println("enter data");
+             int data = sc.nextInt(); // input
+             Node node = new Node(data);
+             
+             if(head==null){
+                 head = node;
+                 tail = head;
+             }else{
+                 tail.next = node;
+                 tail = tail.next;
+             }
+             System.out.println("enter n:- 1 to add more elements");
+		      n = sc.nextInt();  // input
+         }
+         
+         printLL(head);
+	}
+	
+	public static void printLL(Node node)
+	{
+	    if(node==null){
+	        System.out.println("Linked list is empty");
+	    }
+	    Node dummy = node;
+	    while(dummy!=null){
+	        System.out.print(dummy.data + " ");
+	        dummy = dummy.next;
+	    }
+	}
+}
+
+
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data = data;
+    }
+}
