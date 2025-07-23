@@ -1,0 +1,99 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java . util . Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+		 System.out.println("enter n:- 1 to add element");
+		 int n = sc.nextInt();  // input
+		 
+// 		 head and tail. head starting pointer and tail end of ll
+         Node head = null;
+         Node tail = null;
+         
+         while(n==1)
+         {
+             System.out.println("enter data");
+             int data = sc.nextInt(); // input
+             Node node = new Node(data); // node object 
+             if(head==null){
+                 head = node;
+                 tail = head;
+             }else{
+                 tail.next = node;
+                 tail = tail.next;
+             }
+             System.out.println("enter n:- 1 to add more elements");
+		      n = sc.nextInt();  // input
+         }
+         
+         printLL(head);
+         System.out.println();
+         System.out.println(getAtAParticularIndex(head , 3));
+         System.out.println(getAtAParticularIndex(head , -1));
+         System.out.println(getAtAParticularIndex(head , 2));
+         System.out.println(updateANodeInaLL(head , 2 , 67));
+          System.out.println();
+         printLL(head);
+         
+	}
+	
+	public static void printLL(Node node)
+	{
+	    if(node==null){
+	        System.out.println("Linked list is empty");
+	    }
+	    Node dummy = node;
+	    while(dummy!=null){
+	        System.out.print(dummy.data + " ");
+	        dummy = dummy.next;
+	    }
+	}
+	
+	public static int getAtAParticularIndex(Node node , int index)
+	{
+	    int count = 0;
+	    Node dummy = node;
+	    while(dummy!=null)
+	    {
+	        if(count==index){
+	            return dummy.data;
+	        }
+	        count++;
+	        dummy = dummy.next;
+	    }
+	    return -1;
+	}
+	
+	
+	public static boolean updateANodeInaLL(Node node , int index , int data)
+	{
+	    int count = 0;
+	    while(node!=null)
+	    {
+	        if(count==index){
+	            node.data = data;
+	            return  true;
+	        }
+	        count++;
+	        node = node.next;
+	    }
+	    return false;
+	}
+	
+}
+
+
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data = data;
+    }
+}
