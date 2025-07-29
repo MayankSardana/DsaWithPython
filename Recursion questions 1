@@ -1,0 +1,5 @@
+- make a array , print from index0 to index n - 1 using  recursion [3,4,5]  3 4 5 pre call
+- make a array ,print from index n - 1 to index 0 using recusion [3,4,5] 5 4 3    post call
+- calculate power of a number  8 , 3     8*8*8 = 324     5,4 = 625   n and x
+
+don't use loops use recursion , please dry run .............
