@@ -1,0 +1,12 @@
+def solve(n):
+    if n==1: return 1
+
+    t = solve(n - 1)
+    
+    y = t*n
+    
+    return y
+
+
+
+print(solve(5))
