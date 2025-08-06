@@ -1,0 +1,35 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+    static int count = 0;
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		String str = "abc";
+		subsets(str , "");
+		System.out.println("count:-" + count);
+	}
+	
+	public static void subsets(String str , String result)
+	{
+	    if(str.length()==0){
+	        count++;
+	        if(result.length()==0){
+	            System.out.println("X");
+	        }else{
+	            System.out.println(result);
+	        }
+	        return;
+	    }
+	    char ch  = str.charAt(0); // 0 (string)
+	    subsets(str.substring(1) , result + ch); // substring(1)
+	    subsets(str.substring(1) , result);
+	    return;
+	}
+}
