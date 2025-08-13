@@ -1,0 +1,32 @@
+class Solution {
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<Integer> list = new ArrayList<>();
+        List<List<Integer>> finalans = new ArrayList<>();
+        solve(n , k , 0 , 0 , 0 , list , finalans);
+        return finalans;
+    }
+
+    public void solve(int n , int k , int start , int sum , int count, List<Integer> list , List<List<Integer>> finalans){
+        if(count==k && sum==n)
+        {
+                List<Integer> newAns = new ArrayList<>();
+                for(int i:list){
+                    newAns.add(i);
+                }
+                finalans.add(newAns);
+        }
+        if(count>=k){
+            return;
+        }
+        if(sum>=n){
+            return;
+        }
+        for(int i = start + 1;i<=9;i++)
+        {
+            list.add(i); // true
+            solve(n , k , i , sum + i , count + 1 , list , finalans);
+            list.remove(list.size() - 1); // false
+        }
+        return ;
+    }
+}
