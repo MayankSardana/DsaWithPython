@@ -1,0 +1,18 @@
+import java . util . *;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    int a = 10;
+	    StringBuilder str = new StringBuilder("");
+	    while(a!=0){ 
+	        int r = a%2; 
+	        str.append(r); // 0101
+	        a = a/2;
+	    }
+	    
+	    str.reverse();
+	   // 1010
+	    System.out.println(str);
+	}
+}
