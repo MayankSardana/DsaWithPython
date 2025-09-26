@@ -18,3 +18,50 @@ public class Main
 }
 
 
+import java . util . *;
+public class Main
+{
+    
+    public static StringBuilder getBits(int a){
+          StringBuilder str = new StringBuilder("");
+	    while(a!=0){ 
+	        int r = a%2; 
+	        str.append(r); // 0101
+	        a = a/2;
+	    }
+	   return str.reverse();
+    }
+    
+	public static void main(String[] args) {
+// 	  we have to check wther i th bit is set or not 
+
+// mask 
+
+// means 
+
+
+int x = 5;
+
+// 2  101
+
+// 1<<2 = 100 = 1 then is else unset . ./  O(1) we did in o(1)
+
+
+int bit = 1;
+
+
+int mask = 1<<bit;
+
+101
+System.out.println(getBits(mask));
+int git = x&mask;
+
+System.out.println( "git "+ git);
+if((x&mask)!=0){
+    System.out.println("it is set");
+}else{
+    System.out.println("it is unset");
+}
+	}
+}
+
