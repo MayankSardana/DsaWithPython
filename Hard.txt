@@ -1,0 +1,17 @@
+Arrays important Question
+
+
+Pascal traingle
+majority element  both n/2 and n/3
+3-sum
+4-sum
+Largest subarray with 0 sum
+Count number of subarrays with given xor K
+Merge Overlapping Subintervals
+Find the repeating and missing number
+Merge two sorted arrays without extra space
+mcm code part
+Maximum Product Subarray
+Maximum Sum Subarray	
+Count Inversions	
+Reverse Pairs
